@@ -1,0 +1,445 @@
+{
+  "cnyPerSgd": 5.4,
+  "days": {
+    "2026-12-24": {
+      "city": "Singapore → Hanoi",
+      "headline": "Fly to Hanoi · night stopover",
+      "plan": "Flight: Singapore ~4 pm → Hanoi ~7 pm\nOvernight in Hanoi. Stay near the airport, or in the Old Quarter (about 45 min away) for a late pho or bun cha dinner.\nMorning flight tomorrow, so stay close to the airport.",
+      "area": "Old Quarter, Hanoi",
+      "food": "Phở Gia Truyền (49 Bát Đàn) — the classic beef pho; check hours if you land late\nBún Chả Hương Liên — grilled pork with noodles, the \"Obama combo\"\nTạ Hiện (Beer Street) — street stalls and cheap beer open late"
+    },
+    "2026-12-25": {
+      "city": "Hanoi → Beijing",
+      "headline": "Hanoi → Beijing · Qianmen and Peking duck",
+      "plan": "Flight: Hanoi ~10 am → Beijing ~2:30 pm\nImmigration, then the Airport Express or a taxi into the city. Check in.\nEvening: walk Qianmen Street and Dashilan hutong, then Peking duck for Christmas dinner.",
+      "area": "Qianmen & Dashilan, Beijing",
+      "food": "Quanjude Qianmen — the original Peking duck house, around since 1864\nXianyukou Food Street — old Beijing snacks: zhajiangmian, tanghulu, fried pastries\nDuyichu — shaomai dumplings on Qianmen Street"
+    },
+    "2026-12-26": {
+      "city": "Day trip",
+      "headline": "Great Wall day trip",
+      "plan": "Leave early for Mutianyu Great Wall: cable car up, toboggan down if it's open in winter.\nAfternoon: drive on to Gubei Water Town and see Simatai Great Wall lit up at night.\nDress for well below freezing. You'll be back late.",
+      "area": "Mutianyu Great Wall, Beijing",
+      "food": "The Schoolhouse at Mutianyu — lunch near the Wall in an old village school\nMutianyu village restaurants — rainbow trout and home-style dishes\nGubei Water Town — dinner on the old street before the night views"
+    },
+    "2026-12-27": {
+      "city": "Beijing → Chongli",
+      "headline": "Forbidden City, then train to Chongli",
+      "plan": "Morning: Forbidden City (book ahead with your passport; it opens around 8:30). Then a quick climb up Jingshan Park for the view.\nAfternoon: high-speed train from Beijing North or Qinghe to Taizicheng (about 1 hr), then the resort shuttle.\nCheck in, pick up rentals, early night.",
+      "area": "Forbidden City & Jingshan, Beijing",
+      "food": "Siji Minfu (Forbidden City branch) — Peking duck by the palace moat; expect a queue\nQingfeng Baozi — quick steamed buns before the train\nHotpot in Chongli for dinner — the easy warm-up after a travel day"
+    },
+    "2026-12-28": {
+      "city": "Chongli",
+      "headline": "Ski day 1 · Thaiwoo",
+      "plan": "Thaiwoo: good mix of beginner, intermediate and advanced runs.\nBook a morning lesson if anyone is new, then ski freely after lunch.\nEvening: hotpot and a soak.",
+      "area": "Thaiwoo Ski Resort, Chongli",
+      "food": "Youmian wowo (莜面窝窝) — Zhangjiakou's oat-noodle rolls, the local dish to try\nLamb hotpot in Thaiwoo village — warms you up after skiing\nSlope-side lodges — quick lunch without leaving the mountain (pricey)"
+    },
+    "2026-12-29": {
+      "city": "Chongli",
+      "headline": "Ski day 2 · Genting or Wanlong",
+      "plan": "Try another resort. Genting Secret Garden hosted the Olympic freestyle and snowboard events. Wanlong has more steep and black runs.\nBeginners can stay on Thaiwoo's easy slopes.",
+      "area": "Genting Resort Secret Garden, Chongli",
+      "food": "Genting slope-side restaurants — lunch without taking your boots off\nTaizicheng Ice & Snow Town — restaurants and food stalls by the station in the evening\nLamb skewers (yangrou chuan) — Hebei does them well; look for a smoky grill"
+    },
+    "2026-12-30": {
+      "city": "Chongli → Beijing",
+      "headline": "Last ski morning, train back",
+      "plan": "Ski the morning, return rentals and check out.\nAfternoon or evening: train back to Beijing. Some trains don't return to Beijing North, so check the station on your ticket.\nEvening, if you have energy: skate or ride ice bikes on the Beihai Park rink.",
+      "area": "Beihai Park, Beijing",
+      "food": "Fangshan Restaurant — imperial-court dishes inside Beihai Park; check opening hours\nHuguosi Xiaochi — old Beijing snacks, cheap and quick\nNanmen Shuanrou — old-style copper-pot mutton hotpot"
+    },
+    "2026-12-31": {
+      "city": "Beijing",
+      "headline": "New Year's Eve",
+      "plan": "Sleep in after skiing. Afternoon: Lama Temple and the Wudaoying hutong cafés.\nNight: the countdown. Last year's big ones were Shougang Park (Big Air), 798 Art District (free night event) and Jingshan for the view. Check this year's line-up in December and get there by 8 pm.",
+      "area": "Lama Temple & Wudaoying Hutong, Beijing",
+      "food": "Hu Da on Gui Jie — famous spicy crayfish, open late; queues before the countdown\nXu Xiang Zhai — vegetarian buffet opposite the Lama Temple\nWudaoying cafés — coffee and a warm-up between sights"
+    },
+    "2027-01-01": {
+      "city": "Beijing",
+      "headline": "New Year's Day in the hutongs",
+      "plan": "Public holiday, so expect crowds. Stay central and keep it easy.\nLate morning: Nanluoguxiang and the Drum and Bell Towers.\nAfternoon: skate at the Shichahai outdoor rink (use the supervised area), then Houhai.\nOptional: Olympic Forest Park ice and snow carnival, if it runs again this winter.",
+      "area": "Nanluoguxiang & Drum Tower, Beijing",
+      "food": "Yaoji Chaogan — Beijing liver stew and baozi by the Drum Tower\nWenyu Nailao — creamy Beijing milk pudding on Nanluoguxiang\nKaorouji — Beijing barbecue since 1848, right by Shichahai"
+    },
+    "2027-01-02": {
+      "city": "Beijing",
+      "headline": "Universal Beijing Resort",
+      "plan": "Universal Beijing Resort for the whole day. Buy tickets ahead, because the holiday weekend will be busy.\nBackup plan: Summer Palace, where you can skate on Kunming Lake once it's frozen.\nLast big dinner: hotpot or Peking duck round two. Pack tonight.",
+      "area": "Universal Beijing Resort, Beijing",
+      "food": "Universal CityWalk — restaurants outside the park gates, no ticket needed\nDa Dong — modern Peking duck for the last big dinner; book ahead\nHaidilao — hotpot with famous service, open late if the park runs long"
+    },
+    "2027-01-03": {
+      "city": "Beijing → Hanoi",
+      "headline": "Temple of Heaven, fly to Hanoi",
+      "plan": "Early: Temple of Heaven (opens around 6:00, with locals doing tai chi). Grab souvenirs on the way back.\nLeave for the airport around midday. It's the last day of the holiday, so allow extra time.\nFlight: Beijing ~3:30 pm → Hanoi ~6:30 pm\nOvernight in Hanoi, near the airport.",
+      "area": "Temple of Heaven, Beijing",
+      "food": "Jianbing from a street cart — Beijing's breakfast crepe\nQingfeng Baozi — steamed buns, quick and cheap before the airport"
+    },
+    "2027-01-04": {
+      "city": "Hanoi → Singapore",
+      "headline": "Hanoi → Singapore",
+      "plan": "Flight: Hanoi ~8 am → Singapore ~12:30 pm\nEarly start for the airport. Home for lunch.",
+      "area": "Noi Bai Airport, Hanoi",
+      "food": "Bánh mì or phở near your airport hotel for breakfast\nEgg coffee (cà phê trứng) — Hanoi's specialty, if a café at the airport has it"
+    }
+  },
+  "tasks": [
+    {
+      "id": "s01",
+      "title": "Book flights Singapore ⇄ Beijing via Hanoi",
+      "who": "anyone",
+      "due": "",
+      "tag": "Book",
+      "note": "",
+      "done": true,
+      "created_at": 1
+    },
+    {
+      "id": "s02",
+      "title": "Check passport validity and China entry rules for your passport",
+      "who": "everyone",
+      "due": "",
+      "tag": "Docs",
+      "note": "",
+      "done": false,
+      "created_at": 2
+    },
+    {
+      "id": "s03",
+      "title": "Book Beijing hotel",
+      "who": "anyone",
+      "due": "",
+      "tag": "Book",
+      "note": "",
+      "done": true,
+      "created_at": 3
+    },
+    {
+      "id": "s04",
+      "title": "Book Chongli ski stay for Mon 28 – Wed 30 Dec",
+      "who": "anyone",
+      "due": "",
+      "tag": "Book",
+      "note": "",
+      "done": true,
+      "created_at": 4
+    },
+    {
+      "id": "s05",
+      "title": "Book high-speed train Beijing ⇄ Taizicheng (Chongli)",
+      "who": "anyone",
+      "due": "",
+      "tag": "Book",
+      "note": "Sales open about 15 days ahead",
+      "done": true,
+      "created_at": 5
+    },
+    {
+      "id": "s06",
+      "title": "Sort out lift passes and ski / board rental",
+      "who": "anyone",
+      "due": "",
+      "tag": "Ski",
+      "note": "",
+      "done": true,
+      "created_at": 6
+    },
+    {
+      "id": "s07",
+      "title": "Travel insurance that covers skiing",
+      "who": "everyone",
+      "due": "",
+      "tag": "Docs",
+      "note": "",
+      "done": false,
+      "created_at": 7
+    },
+    {
+      "id": "s08",
+      "title": "Set up Alipay / WeChat Pay with your card",
+      "who": "everyone",
+      "due": "",
+      "tag": "Money",
+      "note": "",
+      "done": false,
+      "created_at": 8
+    },
+    {
+      "id": "s09",
+      "title": "Get an eSIM / roaming plan that works with Google and WhatsApp",
+      "who": "everyone",
+      "due": "",
+      "tag": "Plan",
+      "note": "",
+      "done": false,
+      "created_at": 9
+    },
+    {
+      "id": "s10",
+      "title": "Reserve Forbidden City tickets (need passport numbers)",
+      "who": "anyone",
+      "due": "",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 10
+    },
+    {
+      "id": "s11",
+      "title": "Book Mutianyu + Gubei Water Town day trip (driver or tour)",
+      "who": "anyone",
+      "due": "2026-12-26",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 11
+    },
+    {
+      "id": "s12",
+      "title": "Pack thermals, ski gloves, goggles. Chongli can drop below −20 °C",
+      "who": "everyone",
+      "due": "",
+      "tag": "Pack",
+      "note": "",
+      "done": false,
+      "created_at": 12
+    },
+    {
+      "id": "s13",
+      "title": "Check this year's New Year's Eve countdown events and book if needed",
+      "who": "anyone",
+      "due": "2026-12-31",
+      "tag": "Plan",
+      "note": "",
+      "done": false,
+      "created_at": 13
+    },
+    {
+      "id": "s14",
+      "title": "Buy Universal Beijing Resort tickets",
+      "who": "anyone",
+      "due": "2027-01-02",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 14
+    },
+    {
+      "id": "s16",
+      "title": "Book ski lesson for the first morning (if anyone is a beginner)",
+      "who": "anyone",
+      "due": "2026-12-28",
+      "tag": "Ski",
+      "note": "",
+      "done": false,
+      "created_at": 16
+    },
+    {
+      "id": "s17",
+      "title": "Book Hanoi hotel for 24 Dec (near the airport, morning flight next day)",
+      "who": "anyone",
+      "due": "2026-12-24",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 17
+    },
+    {
+      "id": "s18",
+      "title": "Book Hanoi airport hotel for 3 Jan (early flight next day)",
+      "who": "anyone",
+      "due": "2027-01-03",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 18
+    },
+    {
+      "id": "s19",
+      "title": "Check Vietnam entry rules for the overnight stopovers",
+      "who": "everyone",
+      "due": "",
+      "tag": "Docs",
+      "note": "",
+      "done": false,
+      "created_at": 19
+    },
+    {
+      "id": "s20",
+      "title": "Book Beijing airport → hotel transfer (or plan the Airport Express)",
+      "who": "anyone",
+      "due": "2026-12-25",
+      "tag": "Book",
+      "note": "",
+      "done": false,
+      "created_at": 20
+    }
+  ],
+  "ideas": [
+    {
+      "id": "i01",
+      "title": "Forbidden City",
+      "city": "Beijing",
+      "when": "Half day · closed Mondays",
+      "note": "Book ahead with your passport details.",
+      "link": "",
+      "ord": 1
+    },
+    {
+      "id": "i02",
+      "title": "Jingshan Park at sunset",
+      "city": "Beijing",
+      "when": "1 hr",
+      "note": "The best view over the Forbidden City's roofs, especially after snow.",
+      "link": "",
+      "ord": 2
+    },
+    {
+      "id": "i03",
+      "title": "Skate at Shichahai",
+      "city": "Beijing",
+      "when": "Winter only",
+      "note": "Big outdoor natural rink with skate rental. Stay in the supervised area.",
+      "link": "",
+      "ord": 3
+    },
+    {
+      "id": "i04",
+      "title": "Beihai Park ice rink",
+      "city": "Beijing",
+      "when": "Winter only",
+      "note": "Ice sleds and ice bikes below the White Dagoba.",
+      "link": "",
+      "ord": 4
+    },
+    {
+      "id": "i05",
+      "title": "Temple of Heaven",
+      "city": "Beijing",
+      "when": "Morning",
+      "note": "Go early to see locals doing tai chi and dancing.",
+      "link": "",
+      "ord": 5
+    },
+    {
+      "id": "i06",
+      "title": "Lama Temple + Wudaoying hutong",
+      "city": "Beijing",
+      "when": "Half day",
+      "note": "Incense, giant Buddha, then cafés along the hutong.",
+      "link": "",
+      "ord": 6
+    },
+    {
+      "id": "i07",
+      "title": "Summer Palace",
+      "city": "Beijing",
+      "when": "Half day",
+      "note": "Skate on Kunming Lake once it's frozen.",
+      "link": "",
+      "ord": 7
+    },
+    {
+      "id": "i08",
+      "title": "798 Art District",
+      "city": "Beijing",
+      "when": "Afternoon",
+      "note": "Galleries in old factories. Last year it ran a free New Year's Eve night event.",
+      "link": "",
+      "ord": 8
+    },
+    {
+      "id": "i09",
+      "title": "Olympic Park + Forest Park ice and snow carnival",
+      "city": "Beijing",
+      "when": "Late Dec – Feb",
+      "note": "Last winter's carnival ran 24 Dec – 28 Feb. Check the dates for this year.",
+      "link": "",
+      "ord": 9
+    },
+    {
+      "id": "i10",
+      "title": "Universal Beijing Resort",
+      "city": "Beijing",
+      "when": "Full day",
+      "note": "Book tickets ahead, especially for the holiday weekend.",
+      "link": "",
+      "ord": 10
+    },
+    {
+      "id": "i11",
+      "title": "Shougang Park New Year countdown",
+      "city": "Beijing",
+      "when": "31 Dec night",
+      "note": "Last year's main countdown was at Big Air Shougang, the Olympic ski jump.",
+      "link": "",
+      "ord": 11
+    },
+    {
+      "id": "i12",
+      "title": "Peking duck dinner",
+      "city": "Beijing",
+      "when": "Evening",
+      "note": "Book a table for the first or last night.",
+      "link": "",
+      "ord": 12
+    },
+    {
+      "id": "i13",
+      "title": "Mutianyu Great Wall: cable car up, toboggan down",
+      "city": "Day trip",
+      "when": "Full day",
+      "note": "The toboggan can close in bad weather. Expect well below freezing.",
+      "link": "",
+      "ord": 13
+    },
+    {
+      "id": "i14",
+      "title": "Gubei Water Town + Simatai Great Wall at night",
+      "city": "Day trip",
+      "when": "Evening",
+      "note": "One of the few Great Wall sections you can visit at night. Pairs well with Mutianyu.",
+      "link": "",
+      "ord": 14
+    },
+    {
+      "id": "i15",
+      "title": "Ski Thaiwoo",
+      "city": "Chongli",
+      "when": "Full day",
+      "note": "Good for mixed abilities: beginner, intermediate and advanced runs.",
+      "link": "",
+      "ord": 15
+    },
+    {
+      "id": "i16",
+      "title": "Ski Genting Secret Garden",
+      "city": "Chongli",
+      "when": "Full day",
+      "note": "Olympic freestyle and snowboard venue. Steeper terrain.",
+      "link": "",
+      "ord": 16
+    },
+    {
+      "id": "i17",
+      "title": "Ski Wanlong",
+      "city": "Chongli",
+      "when": "Full day",
+      "note": "Lots of black runs. Best for intermediate and advanced skiers.",
+      "link": "",
+      "ord": 17
+    },
+    {
+      "id": "i18",
+      "title": "Cuiyunshan Galaxy",
+      "city": "Chongli",
+      "when": "Full day",
+      "note": "Smaller and beginner-friendly.",
+      "link": "",
+      "ord": 18
+    }
+  ]
+}

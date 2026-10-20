@@ -1,0 +1,559 @@
+<title>Beijing Winter Trip</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one narrow column for phones; header with countdown, three tabs (To-do · Money · Days). Snow ground, palace-cinnabar accent, ice blue marks ski days. */
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --sunk:#e3e9f0; --ink:#152030; --muted:#5a6779; --line:#d5dde7;
+  --accent:#b3322a; --accent-ink:#ffffff; --accent-soft:#f6dedb;
+  --ice:#2c6c9c; --ice-soft:#dbe9f4; --ok:#28764a; --ok-soft:#dcefe3; --owe:#a2441b;
+  --line-strong:#b4c0ce; --c-bj:#b3322a; --c-bj-t:#f8e4e1; --c-cl:#2c6c9c; --c-cl-t:#e0edf7; --c-hn:#1d7a68; --c-hn-t:#dcf0ea; --c-trip:#a8661a; --c-trip-t:#f6e9d6;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e131a; --surface:#161d27; --sunk:#1d2632; --ink:#e6ebf1; --muted:#99a5b4; --line:#2a3442;
+  --accent:#e2594d; --accent-ink:#1a0806; --accent-soft:#3a1d1b;
+  --ice:#77b4e3; --ice-soft:#1b2c3c; --ok:#62c48d; --ok-soft:#173326; --owe:#f0915f;
+  --line-strong:#4a5668; --c-bj:#e8675b; --c-bj-t:#2c1b1c; --c-cl:#7bb8e6; --c-cl-t:#17283a; --c-hn:#4fc2a8; --c-hn-t:#142c28; --c-trip:#e0a45a; --c-trip-t:#2d2216; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e131a; --surface:#161d27; --sunk:#1d2632; --ink:#e6ebf1; --muted:#99a5b4; --line:#2a3442;
+  --accent:#e2594d; --accent-ink:#1a0806; --accent-soft:#3a1d1b;
+  --ice:#77b4e3; --ice-soft:#1b2c3c; --ok:#62c48d; --ok-soft:#173326; --owe:#f0915f;
+  --line-strong:#4a5668; --c-bj:#e8675b; --c-bj-t:#2c1b1c; --c-cl:#7bb8e6; --c-cl-t:#17283a; --c-hn:#4fc2a8; --c-hn-t:#142c28; --c-trip:#e0a45a; --c-trip-t:#2d2216; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding-block:20px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(30px,7vw,44px);font-weight:800;font-stretch:78%;line-height:1}
+h2{font-size:20px;font-weight:700;font-stretch:90%}
+h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-stretch:100%}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+header{display:flex;flex-direction:column;gap:8px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--sunk);font-size:13px;font-weight:500;color:var(--ink)}
+.pill.ice{background:var(--ice-soft);color:var(--ice)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 12px;font-weight:500}
+button:hover{border-color:var(--muted)}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+button.ghost{border-color:transparent;background:transparent;color:var(--muted);padding:4px 8px}
+button.ghost:hover{color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
+input[type=text],input[type=number],input[type=date],select{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;min-width:0}
+input::placeholder{color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.banner{border-radius:10px;padding:12px 14px;background:var(--accent-soft);color:var(--ink);font-size:14px}
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:10px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.tabs button{flex:1;border:0;background:transparent;border-radius:7px;font-weight:600;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .08)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.row > input[type=text]{flex:1 1 200px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-family:var(--display);font-size:26px;font-weight:800;font-stretch:80%;line-height:1.1}
+.stat span{font-size:12px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border-radius:999px;padding:4px 11px;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.group{display:flex;flex-direction:column;gap:6px}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-top:6px}
+.group-head .ski{color:var(--ice);font-weight:600;font-size:12px}
+.task{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.task.done .t-title{text-decoration:line-through;color:var(--muted)}
+.task .box{width:26px;height:26px;border-radius:50%;border:2px solid var(--line-strong);background:var(--surface);padding:0;display:grid;place-items:center;margin-top:-1px;color:transparent;transition:background .18s,border-color .18s,color .18s,transform .12s}
+.task .box svg{width:14px;height:14px}
+.task .box path{stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .25s ease-out}
+button.box:hover{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+button.box:hover path{stroke-dashoffset:0;opacity:.45}
+button.box:active{transform:scale(.9)}
+.task.done .box{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.task.done .box path{stroke-dashoffset:0;opacity:1}
+.ring{width:26px;height:26px;margin-top:-1px;position:relative;display:grid;place-items:center}
+.ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring b{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--muted)}
+.task.done .ring b{color:var(--ok)}
+@media (prefers-reduced-motion:reduce){.task .box,.task .box path{transition:none}}
+.t-body{min-width:0;display:flex;flex-direction:column;gap:4px}
+.t-title{font-weight:500;overflow-wrap:anywhere}
+.t-sub{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted);align-items:center}
+.tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:1px 7px;border-radius:4px;background:var(--sunk);color:var(--muted)}
+.tag.Ski{background:var(--ice-soft);color:var(--ice)}
+.tag.Book{background:var(--accent-soft);color:var(--accent)}
+.who-chip{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);background:transparent}
+.who-chip.yes{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.empty{color:var(--muted);text-align:center;padding:24px 12px;border:1px dashed var(--line);border-radius:10px}
+.bal{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline}
+.bal .amt{text-align:right}
+.pos{color:var(--ok)} .neg{color:var(--owe)}
+.settle{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:var(--sunk);flex-wrap:wrap}
+.exp{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.exp:first-child{border-top:0}
+.exp .t-sub{margin-top:2px}
+/* route strip */
+.route{display:flex;flex-direction:column;gap:10px}
+.route-bar{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:3px}
+.route-bar span{height:10px;border-radius:3px;background:var(--c)}
+.route-bar span:first-child{border-radius:6px 3px 3px 6px}.route-bar span:last-child{border-radius:3px 6px 6px 3px}
+.route-ticks{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:3px;font-family:var(--mono);font-size:10px;color:var(--muted);text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:5px;vertical-align:-1px}
+/* timeline */
+.timeline{display:flex;flex-direction:column}
+.daycard{display:grid;grid-template-columns:58px 1fr;gap:14px;position:relative;padding-bottom:16px}
+.daycard::before{content:"";position:absolute;left:28px;top:62px;bottom:0;width:2px;background:var(--line)}
+.daycard:last-child::before{display:none}
+.datecol{display:flex;flex-direction:column;align-items:center;gap:1px;padding-top:6px}
+.datecol .dow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.datecol .dn{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:32px;line-height:1;color:var(--ink)}
+.datecol .mo{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.datecol.today .dn{color:var(--accent)}
+.dcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.dhead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;padding:12px 16px 10px;background:linear-gradient(180deg,var(--tint),transparent)}
+.citypill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.citypill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.dtitle{font-family:var(--display);font-size:19px;font-weight:700;font-stretch:88%;line-height:1.2;padding:0 16px;margin:0;text-wrap:balance;text-transform:none;letter-spacing:-.01em;color:var(--ink)}
+.dbody{padding:10px 16px 14px;display:flex;flex-direction:column;gap:8px}
+.flight{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;background:var(--sunk);border-radius:10px;padding:10px 12px}
+.flight .fno{font-family:var(--mono);font-size:12px;font-weight:500;background:var(--ink);color:var(--bg);border-radius:5px;padding:2px 7px;grid-row:span 2;align-self:center}
+.flight .fr{font-weight:600;font-size:14px;overflow-wrap:anywhere}
+.flight .ft{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.slot{display:grid;grid-template-columns:78px 1fr;gap:10px;font-size:14px;line-height:1.5}
+.slot .sl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.slot.plain{grid-template-columns:1fr;color:var(--muted)}
+.dfoot{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 14px}
+.dchip{font-size:12px;border-radius:999px;padding:3px 10px;background:var(--sunk);color:var(--ink)}
+.dchip.ok{background:var(--ok-soft);color:var(--ok)}
+.dedit{display:flex;flex-direction:column;gap:8px;padding:12px 16px 14px;border-top:1px dashed var(--line)}
+.dedit .row input{flex:1 1 160px}
+@media (max-width:440px){.daycard{grid-template-columns:44px 1fr;gap:10px}.daycard::before{left:21px}.datecol .dn{font-size:26px}.slot{grid-template-columns:1fr;gap:0}.route-ticks span:nth-child(even){visibility:hidden}}
+textarea{font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;width:100%;box-sizing:border-box;resize:vertical;font-size:14px;line-height:1.45}
+.idea{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.idea:first-child{border-top:0}
+.idea-act{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.idea a{color:var(--ice)}
+@media (max-width:440px){.idea{grid-template-columns:1fr}.idea-act{flex-direction:row;align-items:center}}
+.crew-item{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crew-item input{flex:1 1 140px}
+.me-tag{font-size:12px;font-weight:600;color:var(--ok)}
+.split{display:flex;flex-wrap:wrap;gap:6px}
+.split label{display:inline-flex;gap:5px;align-items:center;font-size:14px;padding:4px 10px;border:1px solid var(--line);border-radius:999px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:8px;font-size:14px;z-index:20;max-width:calc(100% - 32px)}
+.small{font-size:13px;color:var(--muted)}
+@media (max-width:440px){.stat b{font-size:22px}.day{grid-template-columns:62px 1fr}}
+@media (prefers-reduced-motion:no-preference){.task,.settle{transition:background .15s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">24 Dec 2026 – 4 Jan 2027 · Hanoi · Beijing · Chongli</div>
+    <h1>Beijing Winter Trip</h1>
+    <div class="meta">
+      <span class="pill num" id="countdown"></span>
+      <span class="pill ice">Ski · Chongli · Mon 28 – Wed 30 Dec</span>
+      <button class="ghost" id="crewBtn" type="button">Crew: <span id="whoami">loading…</span></button>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="panel" id="crewPanel" hidden aria-label="Crew">
+    <div class="row" style="justify-content:space-between"><h2>Who's going</h2><button class="ghost" id="crewClose" type="button">Close</button></div>
+    <p class="small" style="margin:0">Add the three of you, then tap “This is me” on your own name so “Mine” and “who owes what” know who you are.</p>
+    <div id="crewList" class="group"></div>
+    <form class="row" id="crewForm">
+      <input type="text" id="crewName" placeholder="Friend's name" maxlength="30" aria-label="Name">
+      <button class="primary" type="submit">Add</button>
+    </form>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="t-todo" aria-selected="true" type="button">To-do</button>
+    <button role="tab" id="t-money" aria-selected="false" type="button">Money</button>
+    <button role="tab" id="t-days" aria-selected="false" type="button">Days</button>
+  </nav>
+
+  <!-- TO-DO -->
+  <section id="p-todo" class="group" style="gap:14px">
+    <div class="stats">
+      <div class="stat"><b class="num" id="sOpen">–</b><span>still to do</span></div>
+      <div class="stat"><b class="num" id="sMine">–</b><span>on your plate</span></div>
+      <div class="stat"><b class="num" id="sDone">–</b><span>done</span></div>
+    </div>
+    <form class="panel" id="taskForm">
+      <div class="row">
+        <input type="text" id="taskTitle" placeholder="Add a to-do, e.g. Book ski lessons" maxlength="140" aria-label="To-do" required>
+      </div>
+      <div class="row">
+        <select id="taskWho" aria-label="Who"></select>
+        <select id="taskDue" aria-label="When"></select>
+        <select id="taskTag" aria-label="Type">
+          <option>Book</option><option>Pack</option><option>Ski</option><option>Money</option><option>Docs</option><option>Plan</option>
+        </select>
+        <button class="primary" type="submit" style="margin-left:auto">Add</button>
+      </div>
+    </form>
+    <div class="chips" id="filters" role="group" aria-label="Filter">
+      <button class="chip" data-f="open" type="button">Open</button>
+      <button class="chip" data-f="mine" type="button">Mine</button>
+      <button class="chip" data-f="done" type="button">Done</button>
+      <button class="chip" data-f="all" type="button">All</button>
+    </div>
+    <div id="taskList" class="group" style="gap:14px"><div class="empty">Loading the trip list…</div></div>
+  </section>
+
+  <!-- MONEY -->
+  <section id="p-money" class="group" style="gap:14px" hidden>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between"><h2>Who owes what</h2><span class="small">in SGD · <label>¥<input type="number" id="rate" step="0.01" min="1" style="width:72px" aria-label="Yuan per Singapore dollar"> = S$1</label></span></div>
+      <div id="settleList" class="group"></div>
+      <h3>Net per person</h3>
+      <div id="balList" class="bal"></div>
+    </div>
+    <form class="panel" id="expForm">
+      <h2>Add a spend</h2>
+      <div class="row">
+        <input type="text" id="expTitle" placeholder="What, e.g. Lift passes" maxlength="80" aria-label="What" required>
+      </div>
+      <div class="row">
+        <input type="number" id="expAmt" placeholder="Amount" step="0.01" min="0.01" style="width:120px" aria-label="Amount" required>
+        <select id="expCur" aria-label="Currency"><option value="CNY">¥ CNY</option><option value="SGD">S$ SGD</option></select>
+        <label class="small">Paid by <select id="expPaid" aria-label="Paid by"></select></label>
+        <select id="expDate" aria-label="Day"></select>
+      </div>
+      <div><div class="small" style="margin-bottom:6px">Split equally between</div><div class="split" id="expSplit"></div></div>
+      <div class="row"><button class="primary" type="submit">Add spend</button></div>
+    </form>
+    <div class="panel">
+      <h2>History</h2>
+      <div id="expList"></div>
+    </div>
+  </section>
+
+  <!-- DAYS -->
+  <section id="p-days" class="group" style="gap:14px" hidden>
+    <div class="panel">
+      <h2>The route</h2>
+      <div class="route" id="route"></div>
+    </div>
+    <div class="timeline" id="dayList"></div>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between"><h2>Things to do</h2>
+        <div class="chips" id="ideaFilters" role="group" aria-label="Filter ideas by city">
+          <button class="chip" data-c="All" type="button">All</button><button class="chip" data-c="Beijing" type="button">Beijing</button><button class="chip" data-c="Chongli" type="button">Chongli</button><button class="chip" data-c="Day trip" type="button">Day trip</button>
+        </div></div>
+      <div id="ideaList" class="group"></div>
+      <form class="row" id="ideaForm">
+        <input type="text" id="ideaTitle" placeholder="Add an idea, e.g. Hotpot at Haidilao" maxlength="100" aria-label="Idea">
+        <select id="ideaCity" aria-label="City"><option>Beijing</option><option>Chongli</option><option>Day trip</option></select>
+        <button class="primary" type="submit">Add</button>
+      </form>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  const START='2026-12-24', END='2027-01-04';
+  const SKI=new Set(['2026-12-28','2026-12-29','2026-12-30']);
+  const DAYS=[];
+  for(let d=new Date(START+'T00:00:00');;d.setDate(d.getDate()+1)){
+    const iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    DAYS.push(iso); if(iso===END)break;
+  }
+  const fmt=iso=>new Date(iso+'T00:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+  const todayIso=(()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')})();
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const money=n=>'S$'+(Math.round(n*100)/100).toFixed(2);
+
+  const CITIES=['Beijing','Chongli','Beijing → Chongli','Chongli → Beijing','Day trip','Singapore → Hanoi','Hanoi → Beijing','Beijing → Hanoi','Hanoi → Singapore','Flying'];
+  const S={db:null,me:null,canWrite:true,trip:null,tasks:[],expenses:[],settles:[],ideas:[],ideaCity:'All',filter:'open',tab:'todo',loaded:false};
+  try{S.filter=localStorage.getItem('bwt-filter')||'open';S.tab=localStorage.getItem('bwt-tab')||'todo'}catch(e){}
+
+  const trip=()=>Object.assign({travellers:[],cnyPerSgd:5.4,notes:{}},S.trip||{});
+  const people=()=>trip().travellers;
+  const nameOf=id=>(people().find(t=>t.id===id)||{}).name||'Someone';
+  const myT=()=>people().find(t=>S.me&&t.uid===S.me);
+
+  function toast(msg){const t=$('toast');t.textContent=msg;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2400)}
+  async function guard(fn,ok){
+    if(!S.db){toast('Open this page on claude.ai while signed in to save.');return}
+    if(!S.canWrite){toast('You can view this trip but not change it. Ask the owner to share it with you as an Editor.');return}
+    try{await fn();if(ok)toast(ok)}catch(e){
+      if(e&&e.code==='invalid_argument'){S.canWrite=false;renderAll();toast('That change was refused. You may only have view access.')}
+      else toast('Could not save. Check your connection and try again.')}
+  }
+  const saveTrip=patch=>S.db.doc('trip/main').set(Object.assign({},trip(),patch));
+
+  // two-tap delete
+  function confirmTap(btn,fn){
+    if(btn.dataset.armed){fn();return}
+    btn.dataset.armed='1';const old=btn.textContent;btn.textContent='Sure?';
+    setTimeout(()=>{delete btn.dataset.armed;btn.textContent=old},3000);
+  }
+
+  /* ---------- header ---------- */
+  function renderHeader(){
+    const ms=new Date(START+'T00:00:00')-new Date(todayIso+'T00:00:00');
+    const days=Math.round(ms/864e5);
+    let txt;
+    if(days>0)txt=days+' day'+(days===1?'':'s')+' to go';
+    else{const i=DAYS.indexOf(todayIso);txt=i>=0?'Day '+(i+1)+' of '+DAYS.length:'Trip complete'}
+    $('countdown').textContent=txt;
+    const m=myT();
+    $('whoami').textContent=m?('you’re '+m.name):(people().length?'tap to pick yourself':'add your crew');
+    const b=$('banner');
+    if(!S.db&&S.loaded){b.hidden=false;b.textContent='Saving needs claude.ai. Open this page while signed in to load and edit the shared trip.'}
+    else if(S.loaded&&!S.canWrite){b.hidden=false;b.textContent='You can see the trip but not edit it. Ask the owner to invite you as an Editor.'}
+    else if(S.loaded&&people().length===0){b.hidden=false;b.innerHTML='Start by adding the three of you. <button class="primary" type="button" id="bannerCrew">Add crew</button>';$('bannerCrew').onclick=()=>{$('crewPanel').hidden=false;$('crewName').focus()}}
+    else if(S.loaded&&!m&&S.me){b.hidden=false;b.innerHTML='Which one are you? '+people().filter(t=>!t.uid).map(t=>'<button type="button" data-claim="'+esc(t.id)+'">'+esc(t.name)+'</button>').join(' ');
+      b.querySelectorAll('[data-claim]').forEach(x=>x.onclick=()=>claim(x.dataset.claim))}
+    else b.hidden=true;
+  }
+
+  /* ---------- crew ---------- */
+  function claim(id){
+    const list=people().map(t=>t.id===id?Object.assign({},t,{uid:S.me}):(t.uid===S.me?Object.assign({},t,{uid:null}):t));
+    guard(()=>saveTrip({travellers:list}),'Got it, you’re '+nameOf(id));
+  }
+  function renderCrew(){
+    const box=$('crewList');
+    if(!people().length){box.innerHTML='<div class="empty">No one yet. Add yourself first.</div>';return}
+    box.innerHTML=people().map(t=>`<div class="crew-item">
+      <input type="text" value="${esc(t.name)}" data-rename="${esc(t.id)}" maxlength="30" aria-label="Name" id="crew-${esc(t.id)}">
+      ${t.uid&&t.uid===S.me?'<span class="me-tag">You</span>':t.uid?'<span class="small">claimed</span>':S.me?`<button type="button" data-claim="${esc(t.id)}">This is me</button>`:''}
+      <button class="ghost" type="button" data-rm="${esc(t.id)}">Remove</button></div>`).join('');
+    box.querySelectorAll('[data-claim]').forEach(b=>b.onclick=()=>claim(b.dataset.claim));
+    box.querySelectorAll('[data-rename]').forEach(i=>i.onchange=()=>{const v=i.value.trim();if(!v)return;
+      guard(()=>saveTrip({travellers:people().map(t=>t.id===i.dataset.rename?Object.assign({},t,{name:v}):t)}),'Renamed')});
+    box.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>confirmTap(b,()=>guard(()=>saveTrip({travellers:people().filter(t=>t.id!==b.dataset.rm)}),'Removed')));
+  }
+  $('crewBtn').onclick=()=>{$('crewPanel').hidden=!$('crewPanel').hidden};
+  $('crewClose').onclick=()=>$('crewPanel').hidden=true;
+  $('crewForm').onsubmit=e=>{e.preventDefault();const n=$('crewName').value.trim();if(!n)return;
+    const t={id:'p'+Math.random().toString(36).slice(2,8),name:n,uid:people().length===0&&S.me?S.me:null};
+    guard(async()=>{await saveTrip({travellers:people().concat(t)});$('crewName').value=''},'Added '+n)};
+
+  /* ---------- tabs ---------- */
+  function setTab(t){S.tab=t;try{localStorage.setItem('bwt-tab',t)}catch(e){}
+    ['todo','money','days'].forEach(k=>{$('p-'+k).hidden=k!==t;$('t-'+k).setAttribute('aria-selected',k===t)})}
+  ['todo','money','days'].forEach(k=>$('t-'+k).onclick=()=>setTab(k));
+
+  /* ---------- selects ---------- */
+  function fillSelects(){
+    const ppl=people();
+    const keep=(sel,html)=>{const v=sel.value;sel.innerHTML=html;if([...sel.options].some(o=>o.value===v))sel.value=v};
+    keep($('taskWho'),'<option value="anyone">Anyone</option><option value="everyone">Each of us</option>'+ppl.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join(''));
+    keep($('taskDue'),'<option value="">Before we fly</option>'+DAYS.map(d=>`<option value="${d}">${fmt(d)}${SKI.has(d)?' · ski':''}</option>`).join(''));
+    keep($('expPaid'),ppl.length?ppl.map(t=>`<option value="${esc(t.id)}">${esc(t.name)}</option>`).join(''):'<option value="">Add crew first</option>');
+    if(myT()&&!fillSelects.paidSet){$('expPaid').value=myT().id;fillSelects.paidSet=true}
+    keep($('expDate'),'<option value="">Before the trip</option>'+DAYS.map(d=>`<option value="${d}">${fmt(d)}</option>`).join(''));
+    if(!fillSelects.dateSet&&DAYS.includes(todayIso)){$('expDate').value=todayIso;fillSelects.dateSet=true}
+    const checked=new Set([...$('expSplit').querySelectorAll('input')].filter(i=>i.checked).map(i=>i.value));
+    const fresh=$('expSplit').children.length===0;
+    $('expSplit').innerHTML=ppl.map(t=>`<label><input type="checkbox" value="${esc(t.id)}" id="split-${esc(t.id)}" ${fresh||checked.has(t.id)||!$('split-'+t.id)?'checked':''}>${esc(t.name)}</label>`).join('')||'<span class="small">Add your crew first.</span>';
+    const r=$('rate');if(document.activeElement!==r)r.value=trip().cnyPerSgd;
+  }
+
+  /* ---------- tasks ---------- */
+  const isDone=t=>t.who==='everyone'?(people().length>0&&people().every(p=>t.doneFor&&t.doneFor[p.id])):!!t.done;
+  const isMine=t=>{const m=myT();if(!m)return false;
+    if(t.who==='everyone')return !(t.doneFor&&t.doneFor[m.id]);return t.who===m.id&&!t.done};
+  function renderTasks(){
+    const all=S.tasks;
+    $('sOpen').textContent=all.filter(t=>!isDone(t)).length;
+    $('sMine').textContent=myT()?all.filter(isMine).length:'–';
+    $('sDone').textContent=all.filter(isDone).length;
+    document.querySelectorAll('#filters .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===S.filter));
+    let list=all.filter(t=>S.filter==='all'?true:S.filter==='done'?isDone(t):S.filter==='mine'?isMine(t):!isDone(t));
+    const box=$('taskList');
+    if(!S.loaded){return}
+    if(!list.length){
+      box.innerHTML='<div class="empty">'+(S.filter==='mine'&&!myT()?'Pick yourself in Crew to see your to-dos.':all.length?'Nothing here. Nice.':'No to-dos yet. Add the first one above.')+'</div>';return}
+    const groups=new Map();
+    ['',...DAYS].forEach(d=>groups.set(d,[]));
+    list.forEach(t=>{const k=groups.has(t.due||'')?(t.due||''):'';groups.get(k).push(t)});
+    let html='';
+    for(const [d,items] of groups){
+      if(!items.length)continue;
+      items.sort((a,b)=>(isDone(a)-isDone(b))||((a.createdAt||0)-(b.createdAt||0)));
+      html+=`<div class="group"><div class="group-head"><h3>${d?fmt(d):'Before we fly'}</h3>${SKI.has(d)?'<span class="ski">Ski day · Chongli</span>':''}</div>`;
+      html+=items.map(taskHtml).join('')+'</div>';
+    }
+    box.innerHTML=html;
+    box.querySelectorAll('[data-toggle]').forEach(b=>b.onclick=()=>{const t=S.tasks.find(x=>x.id===b.dataset.toggle);
+      guard(()=>S.db.doc('tasks/'+t.id).update({done:!t.done,doneBy:!t.done&&myT()?myT().id:null}))});
+    box.querySelectorAll('[data-each]').forEach(b=>b.onclick=()=>{const [tid,pid]=b.dataset.each.split('|');const t=S.tasks.find(x=>x.id===tid);
+      const cur=!!(t.doneFor&&t.doneFor[pid]);guard(()=>S.db.doc('tasks/'+tid).update({doneFor:{[pid]:!cur}}))});
+    box.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>confirmTap(b,()=>guard(()=>S.db.doc('tasks/'+b.dataset.del).delete(),'Deleted')));
+    box.querySelectorAll('[data-assign]').forEach(s=>s.onchange=()=>guard(()=>S.db.doc('tasks/'+s.dataset.assign).update({who:s.value})));
+  }
+  function taskHtml(t){
+    const done=isDone(t);const ppl=people();
+    let box;
+    if(t.who==='everyone'){
+      const n=ppl.filter(p=>t.doneFor&&t.doneFor[p.id]).length,tot=ppl.length||0,C=2*Math.PI*11;
+      const frac=tot?n/tot:0;
+      box=`<span class="ring" title="${n} of ${tot} done" aria-label="${n} of ${tot} done"><svg viewBox="0 0 26 26"><circle cx="13" cy="13" r="11" fill="none" stroke="var(--line-strong)" stroke-width="2.5"/><circle cx="13" cy="13" r="11" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="${(C*frac).toFixed(2)} ${C.toFixed(2)}"/></svg><b>${done?'✓':n}</b></span>`;
+    }else box=`<button class="box" type="button" data-toggle="${esc(t.id)}" aria-label="${done?'Mark not done':'Mark done'}" aria-pressed="${done}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
+    const whoOpts='<option value="anyone">Anyone</option><option value="everyone">Each of us</option>'+ppl.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
+    const sel=`<select data-assign="${esc(t.id)}" id="as-${esc(t.id)}" aria-label="Assign" style="padding:2px 6px;font-size:12px">${whoOpts.replace(`value="${esc(t.who)}"`,`value="${esc(t.who)}" selected`)}</select>`;
+    let sub=`<span class="tag ${esc(t.tag)}">${esc(t.tag||'Plan')}</span>${sel}`;
+    if(t.note)sub+=`<span>${esc(t.note)}</span>`;
+    if(t.who!=='everyone'&&t.done&&t.doneBy)sub+=`<span>done by ${esc(nameOf(t.doneBy))}</span>`;
+    let each='';
+    if(t.who==='everyone'&&ppl.length)each='<div class="chips">'+ppl.map(p=>{const y=t.doneFor&&t.doneFor[p.id];
+      return `<button type="button" class="who-chip ${y?'yes':''}" data-each="${esc(t.id)}|${esc(p.id)}" aria-pressed="${!!y}">${y?'✓ ':''}${esc(p.name)}</button>`}).join('')+'</div>';
+    return `<div class="task ${done?'done':''}">${box}<div class="t-body"><div class="t-title">${esc(t.title)}</div><div class="t-sub">${sub}</div>${each}</div><button class="ghost" type="button" data-del="${esc(t.id)}">Delete</button></div>`;
+  }
+  document.querySelectorAll('#filters .chip').forEach(c=>c.onclick=()=>{S.filter=c.dataset.f;try{localStorage.setItem('bwt-filter',S.filter)}catch(e){}renderTasks()});
+  $('taskForm').onsubmit=e=>{e.preventDefault();const title=$('taskTitle').value.trim();if(!title)return;
+    guard(async()=>{await S.db.collection('tasks').add({title,who:$('taskWho').value,due:$('taskDue').value,tag:$('taskTag').value,done:false,doneFor:{},createdAt:Date.now(),createdBy:myT()?myT().id:null});$('taskTitle').value=''},'Added')};
+
+  /* ---------- money ---------- */
+  const toSgd=(amt,cur)=>cur==='SGD'?amt:amt/(trip().cnyPerSgd||5.4);
+  function balances(){
+    const net={};people().forEach(p=>net[p.id]=0);
+    S.expenses.forEach(x=>{const v=toSgd(+x.amount||0,x.cur);const sp=(x.split||[]).filter(id=>id in net);
+      if(x.paidBy in net)net[x.paidBy]+=v;if(sp.length)sp.forEach(id=>net[id]-=v/sp.length);else if(x.paidBy in net)net[x.paidBy]-=v});
+    S.settles.forEach(s=>{if(s.from in net)net[s.from]+=+s.sgd||0;if(s.to in net)net[s.to]-=+s.sgd||0});
+    return net;
+  }
+  function transfers(net){
+    const cr=[],db=[];Object.entries(net).forEach(([id,v])=>{if(v>0.005)cr.push([id,v]);else if(v<-0.005)db.push([id,-v])});
+    cr.sort((a,b)=>b[1]-a[1]);db.sort((a,b)=>b[1]-a[1]);const out=[];let i=0,j=0;
+    while(i<db.length&&j<cr.length){const m=Math.min(db[i][1],cr[j][1]);out.push({from:db[i][0],to:cr[j][0],sgd:Math.round(m*100)/100});
+      db[i][1]-=m;cr[j][1]-=m;if(db[i][1]<0.005)i++;if(cr[j][1]<0.005)j++}
+    return out.filter(t=>t.sgd>=0.01);
+  }
+  function renderMoney(){
+    const net=balances();const rate=trip().cnyPerSgd||5.4;
+    const tr=transfers(net);const sl=$('settleList');
+    if(!people().length)sl.innerHTML='<div class="empty">Add your crew to start splitting costs.</div>';
+    else if(!tr.length)sl.innerHTML='<div class="empty">All square. Nobody owes anyone.</div>';
+    else{sl.innerHTML=tr.map((t,k)=>`<div class="settle"><span><b>${esc(nameOf(t.from))}</b> pays <b>${esc(nameOf(t.to))}</b> <span class="num">${money(t.sgd)}</span> <span class="small num">(¥${(t.sgd*rate).toFixed(0)})</span></span><button type="button" data-settle="${k}">Mark paid</button></div>`).join('');
+      sl.querySelectorAll('[data-settle]').forEach(b=>b.onclick=()=>{const t=tr[+b.dataset.settle];
+        guard(()=>S.db.collection('settlements').add({from:t.from,to:t.to,sgd:t.sgd,createdAt:Date.now()}),'Marked as paid')})}
+    $('balList').innerHTML=people().map(p=>{const v=net[p.id]||0;
+      return `<span>${esc(p.name)}</span><span class="amt num ${v>0.005?'pos':v<-0.005?'neg':''}">${v>0.005?'gets back ':v<-0.005?'owes ':''}${money(Math.abs(v))}</span>`}).join('');
+    const items=[...S.expenses.map(x=>({k:'e',x,at:x.createdAt||0})),...S.settles.map(x=>({k:'s',x,at:x.createdAt||0}))].sort((a,b)=>b.at-a.at);
+    const el=$('expList');
+    if(!items.length){el.innerHTML='<div class="empty">No spends yet. Add the first one, like flights or the Chongli hotel.</div>';return}
+    el.innerHTML=items.map(({k,x})=>{
+      if(k==='s')return `<div class="exp"><div><div class="t-title">${esc(nameOf(x.from))} paid ${esc(nameOf(x.to))} back</div><div class="t-sub"><span class="tag">Settled</span></div></div><span class="num">${money(+x.sgd)}</span><button class="ghost" type="button" data-dels="${esc(x.id)}">Undo</button></div>`;
+      const sym=x.cur==='SGD'?'S$':'¥';const sp=(x.split||[]).map(nameOf);
+      return `<div class="exp"><div style="min-width:0"><div class="t-title">${esc(x.title)}</div><div class="t-sub"><span>${esc(nameOf(x.paidBy))} paid</span><span>· split ${sp.length===people().length?'between all':esc(sp.join(', '))}</span>${x.date?'<span>· '+fmt(x.date)+'</span>':''}</div></div><span class="num" style="text-align:right">${sym}${(+x.amount).toFixed(2)}${x.cur!=='SGD'?`<br><span class="small">${money(toSgd(+x.amount,x.cur))}</span>`:''}</span><button class="ghost" type="button" data-dele="${esc(x.id)}">Delete</button></div>`}).join('');
+    el.querySelectorAll('[data-dele]').forEach(b=>b.onclick=()=>confirmTap(b,()=>guard(()=>S.db.doc('expenses/'+b.dataset.dele).delete(),'Deleted')));
+    el.querySelectorAll('[data-dels]').forEach(b=>b.onclick=()=>confirmTap(b,()=>guard(()=>S.db.doc('settlements/'+b.dataset.dels).delete(),'Undone')));
+  }
+  $('expForm').onsubmit=e=>{e.preventDefault();
+    const title=$('expTitle').value.trim(),amount=parseFloat($('expAmt').value),paidBy=$('expPaid').value;
+    const split=[...$('expSplit').querySelectorAll('input:checked')].map(i=>i.value);
+    if(!title||!(amount>0))return;if(!paidBy){toast('Add your crew first.');return}if(!split.length){toast('Pick at least one person to split with.');return}
+    guard(async()=>{await S.db.collection('expenses').add({title,amount:Math.round(amount*100)/100,cur:$('expCur').value,paidBy,split,date:$('expDate').value,createdAt:Date.now()});
+      $('expTitle').value='';$('expAmt').value=''},'Spend added')};
+  $('rate').onchange=()=>{const v=parseFloat($('rate').value);if(v>0)guard(()=>saveTrip({cnyPerSgd:v}),'Rate updated')};
+
+  /* ---------- days ---------- */
+  const cityKey=c=>{const last=String(c||'').split('→').pop().trim();
+    return /chongli/i.test(last)?'cl':/hanoi/i.test(last)?'hn':/singapore/i.test(last)?'hn':/day trip/i.test(last)?'trip':'bj'};
+  const cityVars=c=>{const k=cityKey(c);return `--c:var(--c-${k});--tint:var(--c-${k}-t)`};
+  function planHtml(text){
+    return String(text||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{
+      let m=l.match(/^(Flight|[A-Z]{2}\d{2,4}):\s*(.+?)\s+(~?\d{1,2}(?::\d{2})?\s*(?:am|pm)?)\s*→\s*(.+?)\s+(~?\d{1,2}(?::\d{2})?\s*(?:am|pm)?)\.?$/i);
+      if(m)return `<div class="flight"><span class="fno">${/^flight$/i.test(m[1])?'✈ Flight':esc(m[1])}</span><span class="fr">${esc(m[2])} → ${esc(m[4])}</span><span class="ft">${esc(m[3])} → ${esc(m[5])}</span></div>`;
+      m=l.match(/^(Morning|Afternoon|Evening|Night|Early|Late morning|Dinner|Lunch|Optional|Backup plan|Last big dinner|Afternoon or evening|Evening, if you have energy)\s*:\s*(.+)$/i);
+      if(m)return `<div class="slot"><span class="sl">${esc(m[1].replace(/, if you have energy/i,''))}</span><span>${esc(m[2])}</span></div>`;
+      return `<div class="slot plain"><span>${esc(l)}</span></div>`}).join('');
+  }
+  function renderRoute(){
+    const plans=trip().days||{};
+    const r=$('route');if(!r)return;
+    r.style.setProperty('--n',DAYS.length);
+    r.innerHTML=`<div class="route-bar">${DAYS.map(d=>`<span style="${cityVars((plans[d]||{}).city)}" title="${esc(fmt(d))} · ${esc((plans[d]||{}).city||'')}"></span>`).join('')}</div>
+      <div class="route-ticks">${DAYS.map(d=>`<span>${new Date(d+'T00:00:00').getDate()}</span>`).join('')}</div>
+      <div class="legend"><span style="--c:var(--c-hn)"><i></i>Hanoi stopover</span><span style="--c:var(--c-bj)"><i></i>Beijing</span><span style="--c:var(--c-trip)"><i></i>Great Wall trip</span><span style="--c:var(--c-cl)"><i></i>Chongli ski</span></div>`;
+  }
+  function renderDays(){
+    const notes=trip().notes||{},plans=trip().days||{};
+    S.editing=S.editing||new Set();
+    renderRoute();
+    $('dayList').innerHTML=DAYS.map(d=>{
+      const dt=new Date(d+'T00:00:00');
+      const p=plans[d]||{};
+      const ts=S.tasks.filter(t=>t.due===d);
+      const spend=S.expenses.filter(x=>x.date===d).reduce((a,x)=>a+toSgd(+x.amount||0,x.cur),0);
+      const city=p.city||'';const ed=S.editing.has(d);
+      const chips=ts.map(t=>`<span class="dchip ${isDone(t)?'ok':''}">${isDone(t)?'✓ ':''}${esc(t.title)}</span>`).join('')+(spend?`<span class="dchip num">Spent ${money(spend)}</span>`:'');
+      return `<article class="daycard" style="${cityVars(city)}">
+        <div class="datecol ${d===todayIso?'today':''}"><span class="dow">${dt.toLocaleDateString('en-GB',{weekday:'short'})}</span><span class="dn">${dt.getDate()}</span><span class="mo">${dt.toLocaleDateString('en-GB',{month:'short'})}</span></div>
+        <div class="dcard">
+          <div class="dhead"><span class="citypill">${esc(city||'Plan this day')}${SKI.has(d)?' · ski day':''}</span><button class="ghost" type="button" data-edit="${d}">${ed?'Done':'Edit'}</button></div>
+          <h3 class="dtitle">${esc(notes[d]||'Nothing planned yet')}</h3>
+          <div class="dbody">${planHtml(p.plan)||'<div class="slot plain"><span>Tap Edit to add a plan.</span></div>'}</div>
+          ${chips?`<div class="dfoot">${chips}</div>`:''}
+          ${ed?`<div class="dedit">
+            <div class="row"><select data-city="${d}" id="city-${d}" aria-label="City for ${fmt(d)}">${CITIES.map(c=>`<option ${c===city?'selected':''}>${esc(c)}</option>`).join('')}${city&&!CITIES.includes(city)?`<option selected>${esc(city)}</option>`:''}</select>
+            <input type="text" data-note="${d}" id="note-${d}" value="${esc(notes[d]||'')}" placeholder="Headline for the day" maxlength="120" aria-label="Headline for ${fmt(d)}"></div>
+            <textarea data-plan="${d}" id="plan-${d}" rows="${Math.min(8,Math.max(3,(p.plan||'').split('\n').length+1))}" placeholder="One line each, e.g. Morning: Forbidden City" maxlength="1200" aria-label="Plan for ${fmt(d)}">${esc(p.plan||'')}</textarea>
+            <span class="small">Start a line with “Morning:”, “Afternoon:” or “Evening:” to label it. A line like “Flight: Hanoi ~10 am → Beijing ~2:30 pm” shows as a flight.</span>
+          </div>`:''}
+        </div></article>`}).join('');
+    $('dayList').querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>{const d=b.dataset.edit;S.editing.has(d)?S.editing.delete(d):S.editing.add(d);renderDays()});
+    const setDay=(d,patch)=>{const all=Object.assign({},trip().days||{});all[d]=Object.assign({},all[d]||{},patch);return saveTrip({days:all})};
+    $('dayList').querySelectorAll('[data-note]').forEach(i=>i.onchange=()=>{const n=Object.assign({},trip().notes||{});n[i.dataset.note]=i.value.trim();guard(()=>saveTrip({notes:n}),'Saved')});
+    $('dayList').querySelectorAll('[data-city]').forEach(s=>s.onchange=()=>guard(()=>setDay(s.dataset.city,{city:s.value}),'Saved'));
+    $('dayList').querySelectorAll('[data-plan]').forEach(t=>t.onchange=()=>guard(()=>setDay(t.dataset.plan,{plan:t.value.trim()}),'Saved'));
+    renderIdeas();
+  }
+  function renderIdeas(){
+    const f=S.ideaCity||'All';
+    document.querySelectorAll('#ideaFilters .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.c===f));
+    const list=S.ideas.filter(i=>f==='All'||i.city===f).sort((a,b)=>(a.order||0)-(b.order||0));
+    const box=$('ideaList');
+    if(!list.length){box.innerHTML='<div class="empty">No ideas yet. Add places you want to try below.</div>';return}
+    box.innerHTML=list.map(i=>{
+      const dayOpts='<option value="">Add to a day…</option>'+DAYS.map(d=>`<option value="${d}">${fmt(d)}</option>`).join('');
+      return `<div class="idea"><div style="min-width:0"><div class="t-title">${esc(i.title)}</div>
+        <div class="t-sub"><span class="tag ${i.city==='Chongli'?'Ski':''}">${esc(i.city||'')}</span>${i.when?`<span>${esc(i.when)}</span>`:''}</div>
+        ${i.note?`<div class="small" style="margin-top:4px">${esc(i.note)}</div>`:''}
+        ${i.link?`<a class="small" href="${esc(i.link)}" target="_blank" rel="noopener">More info ↗</a>`:''}</div>
+        <div class="idea-act"><select data-todo="${esc(i.id)}" id="idea-${esc(i.id)}" aria-label="Add as to-do on a day" style="padding:3px 6px;font-size:12px">${dayOpts}</select>
+        <button class="ghost" type="button" data-delidea="${esc(i.id)}">Delete</button></div></div>`}).join('');
+    box.querySelectorAll('[data-todo]').forEach(s=>s.onchange=()=>{const i=S.ideas.find(x=>x.id===s.dataset.todo);const d=s.value;if(!d)return;
+      guard(()=>S.db.collection('tasks').add({title:i.title,who:'anyone',due:d,tag:'Plan',done:false,doneFor:{},createdAt:Date.now(),createdBy:myT()?myT().id:null}),'Added to '+fmt(d));s.value=''});
+    box.querySelectorAll('[data-delidea]').forEach(b=>b.onclick=()=>confirmTap(b,()=>guard(()=>S.db.doc('ideas/'+b.dataset.delidea).delete(),'Deleted')));
+  }
+  document.querySelectorAll('#ideaFilters .chip').forEach(c=>c.onclick=()=>{S.ideaCity=c.dataset.c;renderIdeas()});
+  $('ideaForm').onsubmit=e=>{e.preventDefault();const title=$('ideaTitle').value.trim();if(!title)return;
+    guard(async()=>{await S.db.collection('ideas').add({title,city:$('ideaCity').value,note:'',order:Date.now(),createdAt:Date.now()});$('ideaTitle').value=''},'Idea added')};
+
+  function renderAll(){
+    renderHeader();renderCrew();fillSelects();renderTasks();renderMoney();
+    const ae=document.activeElement;
+    if(!ae||!ae.dataset||!(ae.dataset.note||ae.dataset.plan))renderDays();else renderIdeas();
+    document.querySelectorAll('#taskForm button,#taskForm input,#taskForm select,#expForm button').forEach(el=>el.disabled=S.loaded&&(!S.db||!S.canWrite));
+  }
+
+  setTab(S.tab);renderAll();
+
+  /* ---------- boot ---------- */
+  (async()=>{
+    const [db,user]=await Promise.all([window.claude?claude.use('db'):null,window.claude?claude.use('user'):null]);
+    S.db=db;
+    if(user){S.me=await user.id();const w=await user.can('data.write');if(w===false)S.canWrite=false}
+    if(!db){S.loaded=true;renderAll();$('taskList').innerHTML='<div class="empty">Open this page on claude.ai while signed in to load the shared trip.</div>';return}
+    const seen=new Set();const ready=k=>{seen.add(k);if(seen.size===5)S.loaded=true;renderAll()};
+    const err=()=>{toast('Lost the live connection. Reload the page to reconnect.')};
+    db.doc('trip/main').onSnapshot(s=>{S.trip=s.exists?s.data():null;ready('trip')},err);
+    const sub=(col,key)=>db.collection(col).onSnapshot(s=>{S[key]=s.docs.map(d=>Object.assign({id:d.id},d.data()));ready(key)},err);
+    sub('tasks','tasks');sub('expenses','expenses');sub('settlements','settles');sub('ideas','ideas');
+  })();
+})();
+</script>
